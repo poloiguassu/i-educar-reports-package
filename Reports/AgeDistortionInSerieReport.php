@@ -98,248 +98,6 @@ curso.nm_curso,
 	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
 	    and m.ref_cod_curso = {$curso}
 	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 5
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_5,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 6
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_6,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 7
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_7,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 8
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_8,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 9
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_9,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 10
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_10,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 11
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_11,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 12
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_12,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 13
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_13,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 14
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_14,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
-	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 15
-	    and m.ativo = 1
-	    and a.ativo = 1
-	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_15,
-
-       (select coalesce(cast(count(m.cod_matricula) as float), 0)
-	   from pmieducar.matricula m
-       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
-	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
-                                              AND view_situacao.cod_turma = mt.ref_cod_turma
-                                              AND view_situacao.sequencial = mt.sequencial
-				                              AND view_situacao.cod_situacao = {$situacao})
-	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
-	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
-	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
-	  where m.ref_ref_cod_serie = serie.cod_serie
-	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
-	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
-	    and m.ref_cod_curso = {$curso}
-	    and m.ano = {$ano}
 	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 16
 	    and m.ativo = 1
 	    and a.ativo = 1
@@ -366,11 +124,163 @@ curso.nm_curso,
 	    and m.ativo = 1
 	    and a.ativo = 1
 	    and s.ativo = 1
-	    and a.ativo = 1) as numero_alunos_17
+	    and a.ativo = 1) as numero_alunos_17,
 
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 18
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_18,
 
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 19
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_19,
 
-  from pmieducar.serie
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 20
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_20,
+
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 21
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_21,
+
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 22
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_22,
+
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 23
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_23,
+
+       (select coalesce(cast(count(m.cod_matricula) as float), 0)
+	   from pmieducar.matricula m
+       inner join pmieducar.matricula_turma mt ON (mt.ref_cod_matricula = m.cod_matricula)
+	   inner join relatorio.view_situacao on (view_situacao.cod_matricula = m.cod_matricula
+                                              AND view_situacao.cod_turma = mt.ref_cod_turma
+                                              AND view_situacao.sequencial = mt.sequencial
+				                              AND view_situacao.cod_situacao = {$situacao})
+	   inner join pmieducar.aluno a on(m.ref_cod_aluno = a.cod_aluno)
+	   inner join cadastro.fisica f on(a.ref_idpes = f.idpes)
+	   inner join pmieducar.serie s on (m.ref_ref_cod_serie = s.cod_serie)
+	  where m.ref_ref_cod_serie = serie.cod_serie
+	    and (CASE WHEN  0 = {$escola} THEN true ELSE {$escola} = m.ref_ref_cod_escola END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = m.ref_ref_cod_serie END)
+	    and (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = s.cod_serie END)
+	    and m.ref_cod_curso = {$curso}
+	    and m.ano = {$ano}
+	    and (({$ano}) - (cast(to_char(f.data_nasc,'yyyy') as integer))) = 24
+	    and m.ativo = 1
+	    and a.ativo = 1
+	    and s.ativo = 1
+	    and a.ativo = 1) as numero_alunos_24
+
+	from pmieducar.serie
   inner join pmieducar.curso on(serie.ref_cod_curso = curso.cod_curso)
  where (CASE WHEN  0 = {$serie} THEN true ELSE {$serie} = serie.cod_serie END)
        and curso.cod_curso = {$curso}
