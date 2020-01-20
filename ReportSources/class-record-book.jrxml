@@ -54,26 +54,6 @@
 	<parameter name="database" class="java.lang.String"/>
 	<parameter name="source" class="java.lang.String"/>
 	<field name="?column?" class="java.lang.Integer"/>
-	<group name="class-record-cover">
-		<groupExpression><![CDATA[true]]></groupExpression>
-		<groupHeader>
-			<band height="32">
-				<subreport>
-					<reportElement x="0" y="0" width="822" height="32" uuid="67f32df8-77f2-44a1-8e68-1cdea3cfec6a"/>
-					<subreportParameter name="logo">
-						<subreportParameterExpression><![CDATA[$P{logo}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="etapa">
-						<subreportParameterExpression><![CDATA[$P{etapa}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="source">
-						<subreportParameterExpression><![CDATA[$P{source}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "class-record-cover.jasper"]]></subreportExpression>
-				</subreport>
-			</band>
-		</groupHeader>
-	</group>
 	<group name="attendance-list" isStartNewColumn="true" isStartNewPage="true">
 		<groupExpression><![CDATA[true]]></groupExpression>
 		<groupHeader>
@@ -111,43 +91,6 @@
 			</band>
 		</groupHeader>
 	</group>
-	<group name="exams-record" isStartNewColumn="true" isStartNewPage="true">
-		<groupExpression><![CDATA[true]]></groupExpression>
-		<groupHeader>
-			<band height="27">
-				<printWhenExpression><![CDATA[$P{modelo} == 1]]></printWhenExpression>
-				<subreport>
-					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="822" height="27" uuid="b5e4de52-3a28-474d-8923-98516559a0e5"/>
-					<subreportParameter name="logo">
-						<subreportParameterExpression><![CDATA[$P{logo}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="etapa">
-						<subreportParameterExpression><![CDATA[$P{etapa}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="source">
-						<subreportParameterExpression><![CDATA[$P{source}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "elementary-school-exams-record.jasper"]]></subreportExpression>
-				</subreport>
-			</band>
-			<band height="27">
-				<printWhenExpression><![CDATA[$P{modelo} == 2]]></printWhenExpression>
-				<subreport>
-					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="822" height="27" uuid="b5e4de52-3a28-474d-8923-98516559a0e5"/>
-					<subreportParameter name="logo">
-						<subreportParameterExpression><![CDATA[$P{logo}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="etapa">
-						<subreportParameterExpression><![CDATA[$P{etapa}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="source">
-						<subreportParameterExpression><![CDATA[$P{source}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "middle-school-exams-record.jasper"]]></subreportExpression>
-				</subreport>
-			</band>
-		</groupHeader>
-	</group>
 	<group name="content-register" isStartNewColumn="true" isStartNewPage="true">
 		<groupExpression><![CDATA[true]]></groupExpression>
 		<groupHeader>
@@ -155,17 +98,6 @@
 				<subreport>
 					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="822" height="27" uuid="b5e4de52-3a28-474d-8923-98516559a0e5"/>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "scholar-subjects-and-objectives.jasper"]]></subreportExpression>
-				</subreport>
-			</band>
-		</groupHeader>
-	</group>
-	<group name="retake-tests-register" isStartNewColumn="true" isStartNewPage="true">
-		<groupExpression><![CDATA[true]]></groupExpression>
-		<groupHeader>
-			<band height="27">
-				<subreport>
-					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="822" height="27" uuid="b5e4de52-3a28-474d-8923-98516559a0e5"/>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "retake-tests-register.jasper"]]></subreportExpression>
 				</subreport>
 			</band>
 		</groupHeader>

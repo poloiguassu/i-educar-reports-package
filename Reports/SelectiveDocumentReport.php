@@ -64,7 +64,7 @@ class SelectiveDocumentReport extends Portabilis_Report_ReportCore
                 ELSE
                     e.etapa = 1
                 AND
-                    e.situacao = {$etapa_1}
+                    e.situacao >= {$etapa_1}
                 END
             )
             AND (
@@ -72,7 +72,7 @@ class SelectiveDocumentReport extends Portabilis_Report_ReportCore
                 ELSE
                     e.etapa = 2
                 AND
-                    e.situacao = {$etapa_2}
+                    e.situacao >= {$etapa_2}
                 END
             )
             AND (
@@ -89,6 +89,6 @@ class SelectiveDocumentReport extends Portabilis_Report_ReportCore
             )
             AND ref_cod_aluno = a.cod_aluno
             AND p.idpes = a.ref_idpes
-            ORDER BY nm_inscrito";
+            ORDER BY nm_inscrito LIMIT 62";
     }
 }

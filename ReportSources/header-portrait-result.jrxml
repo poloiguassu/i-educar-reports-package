@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header-portrait" pageWidth="555" pageHeight="100" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Error" uuid="0d2ddb19-fbc0-4ec9-9b68-1b3f41c8ef77">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header-portrait" pageWidth="830" pageHeight="100" whenNoDataType="AllSectionsNoDetail" columnWidth="830" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="0d2ddb19-fbc0-4ec9-9b68-1b3f41c8ef77">
 	<property name="ireport.zoom" value="1.5026296018031557"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -44,8 +44,8 @@
 	<field name="inep" class="java.lang.Long"/>
 	<pageHeader>
 		<band height="100" splitType="Stretch">
-			<image>
-				<reportElement stretchType="ContainerBottom" x="0" y="0" width="555" height="100" uuid="9674430f-eca9-43bc-84a7-b31a860f744f"/>
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="830" height="100" uuid="9674430f-eca9-43bc-84a7-b31a860f744f"/>
 				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 		</band>

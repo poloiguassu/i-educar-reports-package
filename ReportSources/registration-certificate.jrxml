@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registration-certificate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b58c92c8-60b6-4afb-ae40-52aa24303ab2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="ano" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[new java.lang.Integer(0)]]></defaultValueExpression>
 	</parameter>
@@ -118,48 +119,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[($F{altera_atestado_para_declaracao} ? "Declaramos" : "Atestamos") +" para os devidos fins que, o(a) aluno(a): "+$F{nome}+" filho(a) de "+($F{nm_pai}.equals("") && $F{nm_mae}.equals("") ? "Não Informado" : (!$F{nm_pai}.equals("") && $F{nm_mae}.equals("") ? $F{nm_pai} : ($F{nm_pai}.equals("") && !$F{nm_mae}.equals("") ? $F{nm_mae} : ($F{nm_mae} + " e de " + $F{nm_pai}))))+" nascido(a) em "+$F{data_nasc}+", natural de "+$F{municipio_uf_nascimento}+", admitido em "+$F{dt_matricula}+", está regularmente matriculado no ano de "+$F{ano}+" no curso: "+$F{nm_curso}+" no(a) ano/série: "+$F{nm_serie}+"."]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="21" y="184" width="134" height="20" uuid="7f59c721-2daf-469c-b28b-3e6293f68d78"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Código aluno:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement x="143" y="230" width="175" height="20" uuid="dd038e50-edde-4ca2-be56-c4ad0bec1a6b"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cod_inep}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="143" y="184" width="175" height="20" uuid="8863c168-63e9-47e5-96c7-f872b9acfd7c"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cod_aluno}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="143" y="207" width="175" height="20" uuid="dd038e50-edde-4ca2-be56-c4ad0bec1a6b"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{aluno_estado_id}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="21" y="230" width="134" height="20" uuid="450097ec-70cd-4d94-92bf-65da72263dff"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Código nacional (INEP):]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="21" y="207" width="134" height="20" uuid="01fa4417-6649-48c4-8be1-ea5110c89884"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Código estado:]]></text>
-			</staticText>
 			<textField>
 				<reportElement x="0" y="7" width="555" height="20" uuid="ff1c6f8a-abae-478f-818f-bea1b37ca461"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
@@ -168,7 +127,7 @@
 				<textFieldExpression><![CDATA["ATESTADO DE MATRÍCULA"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="91" y="262" width="439" height="41" uuid="5996defc-e239-45a4-af24-43b78e214110">
+				<reportElement x="91" y="202" width="439" height="41" uuid="5996defc-e239-45a4-af24-43b78e214110">
 					<printWhenExpression><![CDATA[!$P{observacoes}.trim().equals("")]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -177,7 +136,7 @@
 				<textFieldExpression><![CDATA[$P{observacoes}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="21" y="262" width="70" height="20" uuid="1eca72c0-a894-4a5c-acc8-0c94d7797c72">
+				<reportElement x="21" y="202" width="70" height="20" uuid="1eca72c0-a894-4a5c-acc8-0c94d7797c72">
 					<printWhenExpression><![CDATA[!$P{observacoes}.trim().equals("")]]></printWhenExpression>
 				</reportElement>
 				<textElement>

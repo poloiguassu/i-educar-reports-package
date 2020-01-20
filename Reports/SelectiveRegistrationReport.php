@@ -40,6 +40,7 @@ class SelectiveRegistrationReport extends Portabilis_Report_ReportCore
         $etapa_2 = $this->args['etapa_2'] ?: 0;
         $inicial_min = $this->args['inicial_min'] ?: '';
         $inicial_max = $this->args['inicial_max'] ?: '';
+        $etapa_data = 0;
 
         return
             "SELECT DISTINCT
@@ -62,7 +63,7 @@ class SelectiveRegistrationReport extends Portabilis_Report_ReportCore
                 ELSE
                     e.etapa = 1
                 AND
-                    e.situacao = {$etapa_1}
+                    e.situacao >= {$etapa_1}
                 END
             )
             AND (
@@ -71,6 +72,12 @@ class SelectiveRegistrationReport extends Portabilis_Report_ReportCore
                     e.etapa = 2
                 AND
                     e.situacao = {$etapa_2}
+                END
+            )
+            AND (
+                CASE WHEN {$etapa_data} = 0 THEN TRUE
+                ELSE
+                    e.ref_cod_etapa_data = '{$etapa_data}'
                 END
             )
             AND (

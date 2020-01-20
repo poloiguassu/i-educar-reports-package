@@ -14,7 +14,7 @@ class SelectiveStatusReport extends Portabilis_Report_ReportCore
      */
     public function templateName()
     {
-        return 'selective-status';
+        return 'selective-document-phone';
     }
 
     /**
@@ -44,27 +44,31 @@ class SelectiveStatusReport extends Portabilis_Report_ReportCore
         return
             "SELECT DISTINCT
                 public.fcn_upper(p.nome) AS nm_inscrito,
-                MAX(
-                    CASE WHEN e.etapa = 1 THEN
-                        CASE
-                            WHEN e.situacao = 2 THEN 'Parcialmente Adequado'
-                            WHEN e.situacao = 3 THEN 'Adequado'
-                            ELSE 'Não Adequado'
-                        END
-                    END) AS etapa_1,
-                MAX(
-                    CASE WHEN e.etapa = 2 THEN
-                        CASE
-                            WHEN e.situacao = 2 THEN 'Parcialmente Adequado'
-                            WHEN e.situacao = 3 THEN 'Adequado'
-                            ELSE 'Não Adequado'
-                        END
-                    END) AS etapa_2
+                CASE WHEN f.idpes IS NOT NULL THEN
+                    CASE
+                        WHEN f.tipo = 0 THEN f.fone
+                        WHEN f.tipo = 1 THEN f.fone
+                        WHEN f.tipo = 2 THEN f.fone
+                        WHEN f.tipo = 3 THEN f.fone
+                        WHEN f.tipo = 4 THEN f.fone
+                        ELSE null
+                    END
+                END AS telefone_1,
+                CASE WHEN f.idpes IS NOT NULL THEN
+                    CASE
+                        WHEN f.tipo = 5 THEN f.fone
+                        ELSE null
+                    END
+                END AS telefone_2
             FROM
                 pmieducar.inscrito as i,
                 pmieducar.inscrito_etapa as e,
                 cadastro.pessoa as p,
                 pmieducar.aluno as a
+            LEFT JOIN
+                cadastro.fone_pessoa as f
+            ON
+                f.idpes = a.ref_idpes
             WHERE
                 i.ref_cod_selecao_processo = {$processo_seletivo}
             AND (
@@ -80,7 +84,7 @@ class SelectiveStatusReport extends Portabilis_Report_ReportCore
                 ELSE
                     e.etapa = 2
                 AND
-                    e.situacao >= {$etapa_2}
+                    e.situacao = {$etapa_2}
                 END
             )
             AND (
@@ -98,6 +102,6 @@ class SelectiveStatusReport extends Portabilis_Report_ReportCore
             AND i.cod_inscrito = e.ref_cod_inscrito
             AND ref_cod_aluno = a.cod_aluno
             AND p.idpes = a.ref_idpes
-            GROUP BY nm_inscrito ORDER BY nm_inscrito";
+            GROUP BY nm_inscrito, f.idpes, f.tipo, f.fone ORDER BY nm_inscrito";
     }
 }

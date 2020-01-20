@@ -345,65 +345,18 @@
 				</textElement>
 				<text><![CDATA[Matutino]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="421" y="53" width="44" height="15" uuid="c0350a66-5704-415e-ae9f-6d717b5dd5dc"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Integral]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="344" y="52" width="44" height="15" uuid="c0350a66-5704-415e-ae9f-6d717b5dd5dc"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Noturno]]></text>
-			</staticText>
 			<rectangle>
 				<reportElement x="220" y="51" width="14" height="10" uuid="3b69d59e-8d31-44d4-8f69-7f75209672b2"/>
 			</rectangle>
 			<rectangle>
 				<reportElement x="124" y="51" width="14" height="10" uuid="3b69d59e-8d31-44d4-8f69-7f75209672b2"/>
 			</rectangle>
-			<rectangle>
-				<reportElement x="124" y="105" width="14" height="10" uuid="9e12b9e5-3d54-4901-928c-3686a8f975dc"/>
-			</rectangle>
-			<rectangle>
-				<reportElement x="401" y="51" width="14" height="10" uuid="3b69d59e-8d31-44d4-8f69-7f75209672b2"/>
-			</rectangle>
-			<staticText>
-				<reportElement x="113" y="79" width="352" height="15" uuid="bfd3be32-87ad-48fb-9f2d-3f788d5aad8c"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[No caso de transferência durante o ano, apresentar também:]]></text>
-			</staticText>
 			<staticText>
 				<reportElement x="113" y="22" width="352" height="15" uuid="bfd3be32-87ad-48fb-9f2d-3f788d5aad8c"/>
 				<textElement>
 					<font fontName="DejaVu Sans" size="10"/>
 				</textElement>
 				<text><![CDATA[Confirmar o turno:]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="124" y="137" width="14" height="10" uuid="13976172-3b25-4f11-bbe5-d94fd6bda1e4"/>
-			</rectangle>
-			<rectangle>
-				<reportElement x="320" y="51" width="14" height="10" uuid="3b69d59e-8d31-44d4-8f69-7f75209672b2"/>
-			</rectangle>
-			<staticText>
-				<reportElement x="148" y="137" width="295" height="15" uuid="62851621-c7ed-4c60-a3e5-43ee98e3dfe9"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10" isBold="false"/>
-				</textElement>
-				<text><![CDATA[Boletim de notas dos bimestres concluídos.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="148" y="105" width="295" height="15" uuid="138699ba-7af4-4771-a8d7-7935cd9aedad"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10" isBold="false"/>
-				</textElement>
-				<text><![CDATA[Notas parciais;]]></text>
 			</staticText>
 		</band>
 	</detail>

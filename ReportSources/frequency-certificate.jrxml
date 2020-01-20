@@ -124,14 +124,14 @@
 				<textFieldExpression><![CDATA[($F{altera_atestado_para_declaracao} ? "Declaramos" : "Atestamos") +" para os devidos fins que, o(a) aluno(a) "+$F{nome}+", filho(a) de "+(($F{nm_pai}.equals("") || $F{nm_pai} == null) && ($F{nm_mae}.equals("")  || $F{nm_mae} == null ) ? "não informado" : (!$F{nm_pai}.equals("") && ($F{nm_mae}.equals("") || $F{nm_mae} == null) ? $F{nm_pai} : (($F{nm_pai}.equals("") || $F{nm_pai} == null) && !$F{nm_mae}.equals("") ? $F{nm_mae} : ($F{nm_mae} + " e de " + $F{nm_pai}))))+", nascido(a) em "+$F{data_nasc}+", natural de "+$F{municipio_uf_nascimento}+", está frequentando no ano de "+$P{ano}+" o(a) "+$F{nm_serie}+" na(s) turma(s) "+$F{nm_turma}+" do(a) "+$F{nm_curso}+" no(s) período(s) " + $F{periodo} + (!$P{emitir_frequencia} ? "." : " com a frequência " + ($F{frequencia} == null ? "não informada." :"de " + $F{frequencia} + "%" + "."))]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement positionType="Float" x="92" y="336" width="442" height="90" uuid="ba7cb218-2999-4bf4-9b20-ce90405335b9"/>
+				<reportElement positionType="Float" x="92" y="196" width="442" height="90" uuid="ba7cb218-2999-4bf4-9b20-ce90405335b9"/>
 				<textElement textAlignment="Justified">
 					<font fontName="DejaVu Sans" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{observacao}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="21" y="336" width="71" height="13" uuid="ab1f2689-54cc-433f-b62f-82b85d2a2d23">
+				<reportElement x="21" y="196" width="71" height="13" uuid="ab1f2689-54cc-433f-b62f-82b85d2a2d23">
 					<printWhenExpression><![CDATA[$P{observacao} != null]]></printWhenExpression>
 				</reportElement>
 				<textElement markup="none">
@@ -139,66 +139,6 @@
 				</textElement>
 				<text><![CDATA[Observação:]]></text>
 			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement x="157" y="236" width="158" height="20" uuid="dd038e50-edde-4ca2-be56-c4ad0bec1a6b"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cod_inep}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="157" y="212" width="158" height="20" uuid="8863c168-63e9-47e5-96c7-f872b9acfd7c"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cod_aluno}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="21" y="236" width="132" height="20" uuid="450097ec-70cd-4d94-92bf-65da72263dff"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Código nacional (INEP):]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="21" y="282" width="132" height="20" uuid="01fa4417-6649-48c4-8be1-ea5110c89884">
-					<printWhenExpression><![CDATA[$P{database} != "parauapebas"]]></printWhenExpression>
-				</reportElement>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Código estado:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement x="157" y="282" width="158" height="20" uuid="dd038e50-edde-4ca2-be56-c4ad0bec1a6b">
-					<printWhenExpression><![CDATA[$P{database} != "parauapebas"]]></printWhenExpression>
-				</reportElement>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{aluno_estado_id}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="21" y="212" width="132" height="20" uuid="7f59c721-2daf-469c-b28b-3e6293f68d78"/>
-				<textElement markup="none">
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Código do aluno:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="21" y="259" width="132" height="20" uuid="a7fef40f-5b83-4c6f-8ec4-55f8c8a68e23"/>
-				<textElement>
-					<font fontName="DejaVu Sans" size="10"/>
-				</textElement>
-				<text><![CDATA[Identificação social (NIS):]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement x="157" y="259" width="100" height="20" uuid="49de14a9-1c89-4d8b-840c-bf7ad66b6276"/>
-				<textElement>
-					<font fontName="DejaVu Sans"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{cod_nis}]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement x="0" y="7" width="555" height="17" uuid="c68eb866-029b-4035-9655-8398f3d678e4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
